@@ -149,18 +149,95 @@ export const initialState =
       "artist": "Shakkablood_Deployer"
     },
   ],
+  "FidenzabyTylerHobbs": [
+    {
+      "id": 246,
+      "name": "Fidenza #246",
+      "img": "../images/arts/Fidenza/246.png",
+      "price": 60
+    },
+    {
+      "id": 117,
+      "name": "Fidenza #117",
+      "img": "../images/arts/Fidenza/117.png",
+      "price": 61.95
+    },
+    {
+      "id": 633,
+      "name": "Fidenza #633",
+      "img": "../images/arts/Fidenza/633.png",
+      "price": 65
+    },
+    {
+      "id": 573,
+      "name": "Fidenza #573",
+      "img": "../images/arts/Fidenza/573.png",
+      "price": 69.69
+    },
+    {
+      "id": 175,
+      "name": "Fidenza #175",
+      "img": "../images/arts/Fidenza/175.png",
+      "price": 70
+    },
+    {
+      "id": 202,
+      "name": "Fidenza #202",
+      "img": "../images/arts/Fidenza/202.png",
+      "price": 72
+    },
+  ],
+  "Sealenzabyhrunz": [
+    {
+      "id": 813,
+      "name": "Sealenza #813",
+      "img": "../images/arts/Sealenza/813.png",
+      "price": 0.025
+    },
+    {
+      "id": 600,
+      "name": "Sealenza #600",
+      "img": "../images/arts/Sealenza/600.png",
+      "price": 0.025
+    },
+    {
+      "id": 1209,
+      "name": "Sealenza #1209",
+      "img": "../images/arts/Sealenza/1209.png",
+      "price": 0.025
+    },
+    {
+      "id": 1423,
+      "name": "Sealenza #1423",
+      "img": "../images/arts/Sealenza/1423.png",
+      "price": 0.026
+    },
+    {
+      "id": 390,
+      "name": "Sealenza #390",
+      "img": "../images/arts/Sealenza/390.png",
+      "price": 0.0345
+    },
+    {
+      "id": 374,
+      "name": "Sealenza #374",
+      "img": "../images/arts/Sealenza/374.png",
+      "price": 0.035
+    },
+
+  ],
   "cartItems": [
     {
       "itemId": 1,
-      "quantity": 1
+      "quantity": ""
     },
     {
       "itemId": 5,
-      "quantity": 7
+      "quantity": ""
     },
     {
       "itemId": 2,
-      "quantity": 3
+      "quantity": ""
     }
   ]
 }

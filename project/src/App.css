@@ -223,11 +223,11 @@ body {
 .connect-button {
   background-color: #3f62ad;
   border: none;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 0.3rem;
   color: white;
 }
-.item-button {
+.join-button {
   background-color: #deceff;
   border: none;
   border-radius: 1rem;

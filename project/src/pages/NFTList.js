@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NFT from '../components/NFT';
+import ITEM from '../components/Item'
 import { initialState } from '../assets/state';
 
 
-function NFTListContainer({ category, nfts, cartItems, setCategory, setNFTs, setCartItems }) {
+function NFTListContainer({ nfts, cartItems, setNFTs, setCartItems }) {
+  const [join, setJoin] = useState(false);
+  const [category, setCategory] = useState("Arts");
   const categories = ["Arts", "Collectibles", "Domain Names", "Music", "Photography", "Sports", "Trading Cards", "Utility", "Virtual Worlds"];
   const clickCategory = (e) => {
     const category = e.currentTarget.innerText;
     setCategory(category);
     setNFTs(initialState[category.toLowerCase()]);
+    setJoin(false);
   }
-  const handleClick = (e, id) => {
+  const handleJoin = (e, name) => {
+    const nft = name.replace(/ /g, "");
+    setCategory(name);
+    setNFTs(initialState[nft]);
+    setJoin(true);
+  }
+  const handleBuy = (e, id) => {
     const cartIdList = []
     let tempCart = cartItems.slice()
 
@@ -46,7 +56,9 @@ function NFTListContainer({ category, nfts, cartItems, setCategory, setNFTs, set
       </div>
       <div id="item-list-body">
         <div id="item-list-title">{category}</div>
-        {nfts.map((item, idx) => <NFT item={item} key={idx} handleClick={handleClick} />)}
+        {join === false
+          ? nfts.map((item, idx) => <NFT item={item} key={idx} join={join} handleJoin={handleJoin} />)
+          : nfts.map((item, idx) => <ITEM item={item} key={idx} join={join} handleBuy={handleBuy} />)}
       </div>
     </div>
   );

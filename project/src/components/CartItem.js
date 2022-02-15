@@ -27,8 +27,6 @@ export default function CartItem({
         <div className="cart-item-price">{item.price} 원</div>
       </div>
       <input
-        type="number"
-        min={1}
         className="cart-item-quantity"
         value={quantity}
         onChange={(e) => {
