@@ -152,36 +152,48 @@ export const initialState =
   "FidenzabyTylerHobbs": [
     {
       "id": 246,
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #246",
       "img": "../images/arts/Fidenza/246.png",
       "price": 60
     },
     {
       "id": 117,
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #117",
       "img": "../images/arts/Fidenza/117.png",
       "price": 61.95
     },
     {
       "id": 633,
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #633",
       "img": "../images/arts/Fidenza/633.png",
       "price": 65
     },
     {
       "id": 573,
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #573",
       "img": "../images/arts/Fidenza/573.png",
       "price": 69.69
     },
     {
       "id": 175,
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #175",
       "img": "../images/arts/Fidenza/175.png",
       "price": 70
     },
     {
       "id": 202,
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #202",
       "img": "../images/arts/Fidenza/202.png",
       "price": 72
@@ -190,36 +202,48 @@ export const initialState =
   "Sealenzabyhrunz": [
     {
       "id": 813,
+      "category": "arts",
+      "nft": "Sealenza by hrunz",
       "name": "Sealenza #813",
       "img": "../images/arts/Sealenza/813.png",
       "price": 0.025
     },
     {
       "id": 600,
+      "category": "arts",
+      "nft": "Sealenza by hrunz",
       "name": "Sealenza #600",
       "img": "../images/arts/Sealenza/600.png",
       "price": 0.025
     },
     {
       "id": 1209,
+      "category": "arts",
+      "nft": "Sealenza by hrunz",
       "name": "Sealenza #1209",
       "img": "../images/arts/Sealenza/1209.png",
       "price": 0.025
     },
     {
       "id": 1423,
+      "category": "arts",
+      "nft": "Sealenza by hrunz",
       "name": "Sealenza #1423",
       "img": "../images/arts/Sealenza/1423.png",
       "price": 0.026
     },
     {
       "id": 390,
+      "category": "arts",
+      "nft": "Sealenza by hrunz",
       "name": "Sealenza #390",
       "img": "../images/arts/Sealenza/390.png",
       "price": 0.0345
     },
     {
       "id": 374,
+      "category": "arts",
+      "nft": "Sealenza by hrunz",
       "name": "Sealenza #374",
       "img": "../images/arts/Sealenza/374.png",
       "price": 0.035
@@ -228,18 +252,22 @@ export const initialState =
   ],
   "cartItems": [
     {
+      "idx": 0,
       "category": "arts",
       "nft": "Fidenza by Tyler Hobbs",
+      "name": "Fidenza #246",
       "itemId": 1,
-      "quantity": "",
-      "img": "../images/arts/Fidenza/633.png"
+      "price": 60,
+      "img": "../images/arts/Fidenza/246.png"
     },
     {
+      "idx": 1,
       "category": "arts",
       "nft": "Fidenza by Tyler Hobbs",
-      "itemId": 3,
-      "quantity": "",
-      "img": "../images/arts/Fidenza/246.png"
+      "name": "Fidenza #633",
+      "itemId": 2,
+      "price": 65,
+      "img": "../images/arts/Fidenza/633.png"
     },
   ]
 }
