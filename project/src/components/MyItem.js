@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function CartItem({
+export default function MyItem({
   item,
   checkedItems,
   handleCheckChange,
-  handleQuantityChange,
-  handleDelete,
+  handleAddressChange,
+  handleTransfer,
   quantity
 }) {
 
@@ -30,10 +30,10 @@ export default function CartItem({
         className="cart-item-quantity"
         value={quantity}
         onChange={(e) => {
-          handleQuantityChange(Number(e.target.value), item.id)
+          handleAddressChange(Number(e.target.value), item.id)
         }}>
       </input>
-      <button className="cart-item-delete" onClick={() => { handleDelete(item.id) }}>전송</button>
+      <button className="cart-item-delete" onClick={() => { handleTransfer(item.id) }}>전송</button>
     </li >
   )
 }

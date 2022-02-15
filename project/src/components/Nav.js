@@ -13,6 +13,10 @@ function Nav({ total, account, setAccount }) {
 
   return (
     <div id="nav-body">
+      <span id="title">
+        <img id="logo" src="../logo.png" alt="logo" />
+        <span id="name">CodeSea</span>
+      </span>
       <span id="login">
         {account !== undefined && account !== ''
           ? <span>Your Address : {account}</span>
@@ -20,13 +24,8 @@ function Nav({ total, account, setAccount }) {
             connect to MetaMask
           </button>}
       </span>
-      <span id="title">
-        <img id="logo" src="../logo.png" alt="logo" />
-        <span id="name">CodeSea</span>
-
-      </span>
       <div id="menu">
-        <Link to="token">Explore Token</Link>
+        <Link to="token">Login</Link>
         <Link to="/">Explore NFT</Link>
         <Link to="/yourNFT">
           NFT 목록<span id="nav-item-counter">{total}</span>

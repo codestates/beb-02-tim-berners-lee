@@ -4,7 +4,7 @@ import ITEM from '../components/Item'
 import { initialState } from '../assets/state';
 
 
-function NFTListContainer({ nfts, cartItems, setNFTs, setCartItems }) {
+function NFTListContainer({ nfts, myNFTs, setNFTs, setMyNFTs }) {
   const [join, setJoin] = useState(false);
   const [category, setCategory] = useState("Arts");
   const categories = ["Arts", "Collectibles", "Domain Names", "Music", "Photography", "Sports", "Trading Cards", "Utility", "Virtual Worlds"];
@@ -22,9 +22,9 @@ function NFTListContainer({ nfts, cartItems, setNFTs, setCartItems }) {
   }
   const handleBuy = (e, id) => {
     const cartIdList = []
-    let tempCart = cartItems.slice()
+    let tempCart = myNFTs.slice()
 
-    for (const el of cartItems) {
+    for (const el of myNFTs) {
       cartIdList.push(el.itemId)
     }
 
@@ -34,14 +34,14 @@ function NFTListContainer({ nfts, cartItems, setNFTs, setCartItems }) {
           el.quantity++
         }
       }
-      setCartItems(tempCart)
+      setMyNFTs(tempCart)
     } else {
       const newItem = {
         "itemId": id,
         "quantity": 1
       }
       tempCart.push(newItem)
-      setCartItems(tempCart)
+      setMyNFTs(tempCart)
     }
 
   }

@@ -8,15 +8,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import YourNFT from './pages/YourNFT';
+import MyNFT from './pages/MyNFT';
 import { initialState } from './assets/state';
 
 function App() {
   const [web3, setWeb3] = useState();
   const [account, setAccount] = useState('');
   const [nfts, setNFTs] = useState(initialState.arts);
-  const [cartItems, setCartItems] = useState(initialState.cartItems);
-  const [category, setCategory] = useState("Arts");
+  const [myNFTs, setMyNFTs] = useState(initialState.cartItems);
   useEffect(() => {
     if (typeof window.ethereum !== "undefined") {
       try {
@@ -30,13 +29,13 @@ function App() {
 
   return (
     <Router>
-      <Nav total={cartItems.length} account={account} setAccount={setAccount} />
+      <Nav total={myNFTs.length} account={account} setAccount={setAccount} />
       <Switch>
         <Route exact={true} path="/">
-          <NFTList category={category} nfts={nfts} cartItems={cartItems} setCategory={setCategory} setNFTs={setNFTs} setCartItems={setCartItems} />
+          <NFTList nfts={nfts} myNFTs={myNFTs} setNFTs={setNFTs} setMyNFTs={setMyNFTs} />
         </Route>
         <Route path="/yourNFT">
-          <YourNFT cartItems={cartItems} setCartItems={setCartItems} nfts={nfts} />
+          <MyNFT myNFTs={myNFTs} setMyNFTs={setMyNFTs} nfts={nfts} />
         </Route>
       </Switch>
     </Router>

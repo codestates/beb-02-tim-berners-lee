@@ -228,16 +228,18 @@ export const initialState =
   ],
   "cartItems": [
     {
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
       "itemId": 1,
-      "quantity": ""
+      "quantity": "",
+      "img": "../images/arts/Fidenza/633.png"
     },
     {
-      "itemId": 5,
-      "quantity": ""
+      "category": "arts",
+      "nft": "Fidenza by Tyler Hobbs",
+      "itemId": 3,
+      "quantity": "",
+      "img": "../images/arts/Fidenza/246.png"
     },
-    {
-      "itemId": 2,
-      "quantity": ""
-    }
   ]
 }
