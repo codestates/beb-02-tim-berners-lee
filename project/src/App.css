@@ -74,11 +74,6 @@ body {
   width: inherit;
   object-fit: cover;
 }
-.cart-item-checkbox {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 .cart-item-delete {
   float: right;
@@ -88,12 +83,12 @@ body {
   border-radius: 100%;
 }
 
-#cart-item-list {
+#my-item-list {
   flex: 1 1 auto;
   margin: 1rem;
 }
 
-#shopping-cart-container {
+#my-item-container {
   display: flex;
 }
 
@@ -227,7 +222,7 @@ body {
   padding: 0.3rem;
   color: white;
 }
-.join-button {
+.item-button {
   background-color: #deceff;
   border: none;
   border-radius: 1rem;
@@ -306,7 +301,7 @@ a:hover {
 }
 
 @media (max-width: 1000px) {
-  #cart-item-list {
+  #my-item-list {
     width: 100%;
   }
 
@@ -314,7 +309,7 @@ a:hover {
     width: 100%;
     float: left;
   }
-  #shopping-cart-container {
+  #my-item-container {
     display: block;
   }
 }

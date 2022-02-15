@@ -27,7 +27,7 @@ function Nav({ total, account, setAccount }) {
       <div id="menu">
         <Link to="/token">Login</Link>
         <Link to="/">Explore NFT</Link>
-        <Link to="/yourNFT">
+        <Link to="/myNFT">
           NFT 목록<span id="nav-item-counter">{total}</span>
         </Link>
       </div>

@@ -26,28 +26,27 @@ export default function MyNFT({ nfts, myNFTs, setMyNFTs }) {
       quantity: 0,
     }
     for (const item of myNFTs) {
-      total.price += item.price;
+      let result = (total.price + item.price).toFixed(6);
+      total.price = Number(result);
       total.quantity += 1;
     }
 
     return total
   }
 
-  const renderItems = nfts.filter((el) => myNFTs.map((el) => el.itemId).indexOf(el.id) > -1)
   const total = getTotal()
 
   return (
     <div id="item-list-container">
       <div id="item-list-body">
         <div id="item-list-title">My NFT</div>
-        <div id="shopping-cart-container">
+        <div id="my-item-container">
           {!myNFTs.length ? (
             <div id="item-list-text">
               아직 NFT가 없습니다.
             </div>
           ) : (
-            <div id="cart-item-list">
-              {console.log(myNFTs)}
+            <div id="my-item-list">
               {myNFTs.map((item, idx) => {
                 return <MyItem
                   key={idx}

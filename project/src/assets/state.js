@@ -256,7 +256,7 @@ export const initialState =
       "category": "arts",
       "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #246",
-      "itemId": 1,
+      "itemId": 246,
       "price": 60,
       "img": "../images/arts/Fidenza/246.png"
     },
@@ -265,7 +265,7 @@ export const initialState =
       "category": "arts",
       "nft": "Fidenza by Tyler Hobbs",
       "name": "Fidenza #633",
-      "itemId": 2,
+      "itemId": 633,
       "price": 65,
       "img": "../images/arts/Fidenza/633.png"
     },

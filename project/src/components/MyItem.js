@@ -23,7 +23,7 @@ export default function MyItem({
           handleAddressChange(Number(e.target.value), item.id)
         }}>
       </input>
-      <button className="cart-item-delete" onClick={() => { handleTransfer(item.id) }}>전송</button>
+      <button className="cart-item-delete" onClick={() => { handleTransfer(item.itemId) }}>전송</button>
     </li >
   )
 }
