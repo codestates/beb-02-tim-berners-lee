@@ -196,10 +196,11 @@ body {
   font-weight: 400;
 }
 
-.item-price {
+.nft-artist {
   float: right;
+  margin-top: 1rem;
   margin-right: 1rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .nfts {
@@ -219,7 +220,14 @@ body {
   min-width: 200px;
 }
 
-button {
+.connect-button {
+  background-color: #3f62ad;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.3rem;
+  color: white;
+}
+.item-button {
   background-color: #deceff;
   border: none;
   border-radius: 1rem;
@@ -232,7 +240,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.item-button:hover {
   color: white;
   background-color: #4000c7;
   box-shadow: 1px 2px 1px rgb(189, 189, 189);
