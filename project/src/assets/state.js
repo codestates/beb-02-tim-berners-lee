@@ -78,59 +78,76 @@ export const initialState =
   "collectibles": [
     {
       "id": 1,
-      "name": "고릴라 베개",
-      "img": "../images/jyp.png",
-      "artist": 25000
+      "name": "Edenhorde",
+      "img": "../images/collectibles/Edenhorde.png",
+      "artist": "unnamed"
     },
     {
       "id": 2,
-      "name": "강시 모자",
-      "img": "../images/hat.jpg",
-      "artist": 9900
+      "name": "Kong Club Official",
+      "img": "../images/collectibles/KongClub.png",
+      "artist": "KongClub-Team"
     },
     {
       "id": 3,
-      "name": "웰컴 매트",
-      "img": "../images/welcome.jpg",
-      "artist": 6900
+      "name": "Love Addicted Girls",
+      "img": "../images/collectibles/LoveAddictedGirls.png",
+      "artist": "Love_Addicted_Girls_Deployer"
     },
     {
       "id": 4,
-      "name": "잉어 슈즈",
-      "img": "../images/fish.jpg",
-      "artist": 3900
+      "name": "VOX Collectibles",
+      "img": "../images/collectibles/VOX.png",
+      "artist": "6F71E1"
     },
     {
       "id": 5,
-      "name": "칼라 립스틱",
-      "img": "../images/lip.jpg",
-      "artist": 2900
+      "name": "Toy Boogers",
+      "img": "../images/collectibles/ToyBoogers.png",
+      "artist": "ToyBoogers"
     },
     {
       "id": 6,
-      "name": "뜯어온 보도블럭",
-      "img": "../images/block.jpg",
-      "artist": 4900
+      "name": "Pixelmon Trainers",
+      "img": "../images/collectibles/Pixelmon.jpg",
+      "artist": "PixelmonVault"
     },
     {
       "id": 7,
-      "name": "개구리 안대",
-      "img": "../images/frog.jpg",
-      "artist": 2900
+      "name": "KokoDi_NFT",
+      "img": "../images/collectibles/kokoDi.png",
+      "artist": "KoKoDI_WORLD"
     },
     {
       "id": 8,
-      "name": "2020년 달력",
-      "img": "../images/2020.jpg",
-      "artist": 12000
+      "name": "BYOPills",
+      "img": "../images/collectibles/BYOPills.png",
+      "artist": "BYOPContracts"
     },
     {
       "id": 9,
-      "name": "Fidenza by Tyler Hobbs",
-      "artist": "ArtBlocks_Admin",
-      "img": "../images/egg.png",
-      "artist": 9900
-    }
+      "name": "Deadfrenz Lab Access Pass",
+      "img": "../images/collectibles/Deadfrenz.png",
+      "artist": "DeadfrenzDeployer"
+    },
+    {
+      "id": 10,
+      "name": "SlimHoods",
+      "img": "../images/collectibles/SlimHoods.png",
+      "artist": "mikker"
+    },
+    {
+      "id": 11,
+      "name": "Phancy Pets",
+      "img": "../images/collectibles/PhancyPets.gif",
+      "artist": "C5B30E"
+    },
+    {
+      "id": 12,
+      "name": "HPPRS Collection",
+      "img": "../images/collectibles/HPPRS Collection.png",
+      "artist": "Shakkablood_Deployer"
+    },
   ],
   "cartItems": [
     {
