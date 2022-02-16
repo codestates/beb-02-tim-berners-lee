@@ -43,7 +43,6 @@ function App() {
       const name = await contract.methods.name().call();
       const totalSupply = await contract.methods.totalSupply().call();
 
-      setMyNFTs([]);
       for (let tokenId = 1; tokenId <= totalSupply; tokenId++) {
         const tokenOwner = await contract.methods.ownerOf(tokenId).call();
         if (tokenOwner === accounts[0]) {

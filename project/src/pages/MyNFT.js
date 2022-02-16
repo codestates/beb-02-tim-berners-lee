@@ -1,38 +1,9 @@
+import React, { useState } from 'react';
 import MyItem from '../components/MyItem';
 import NFTSummary from '../components/NFTSummary';
 
 export default function MyNFT({ nfts, myNFTs, setMyNFTs, account }) {
-  const handleAddressChange = (quantity, itemId) => {
-    let tempCart = myNFTs.slice();
-
-    for (const el of tempCart) {
-      if (el.itemId === itemId) {
-        el.quantity = quantity;
-      }
-    }
-
-    setMyNFTs(tempCart);
-  };
-
-  const handleTransfer = (itemId) => {
-    setMyNFTs(myNFTs.filter((el) => el.itemId !== itemId));
-  };
-
-  const getTotal = () => {
-    let total = {
-      price: 0,
-      quantity: 0,
-    };
-    for (const item of myNFTs) {
-      let result = (total.price + item.price).toFixed(6);
-      total.price = Number(result);
-      total.quantity += 1;
-    }
-
-    return total;
-  };
-
-  const total = getTotal();
+  const [total, setTotal] = useState(0);
 
   return (
     <div id="item-list-container">
@@ -48,15 +19,14 @@ export default function MyNFT({ nfts, myNFTs, setMyNFTs, account }) {
                   <MyItem
                     key={idx}
                     item={item}
-                    handleAddressChange={handleAddressChange}
-                    handleTransfer={handleTransfer}
                     account={account}
+                    setTotal={setTotal}
                   />
                 );
               })}
             </div>
           )}
-          <NFTSummary total={total.price} totalQty={myNFTs.length} />
+          <NFTSummary total={total} totalQty={myNFTs.length} />
         </div>
       </div>
     </div>
