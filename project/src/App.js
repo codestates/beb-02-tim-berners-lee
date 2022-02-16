@@ -59,6 +59,28 @@ function App() {
     }
   };
 
+  const renewNFTList = async (id) => {
+    const contracts = [
+      [fidenzaAbi, fidenzaAddr],
+      [sealenzaAbi, sealenzaAddr],
+    ];
+    const [abi, address] = contracts[id - 1];
+    const contract = new web3.eth.Contract(abi, address);
+    const name = await contract.methods.name().call();
+    const totalSupply = await contract.methods.totalSupply().call();
+
+    for (let tokenId = 1; tokenId <= totalSupply; tokenId++) {
+      const tokenPrice = await contract.methods.tokenPrice(tokenId).call();
+      const tokenURI = await contract.methods.tokenURI(tokenId).call();
+      setNFTs((prev) => {
+        return [
+          ...prev,
+          { contract, name, tokenPrice, tokenId, tokenURI }
+        ];
+      });
+    }
+  };
+
   return (
     <Router>
       <Nav
@@ -77,6 +99,7 @@ function App() {
             myNFTs={myNFTs}
             setNFTs={setNFTs}
             setMyNFTs={setMyNFTs}
+            renewNFTList={renewNFTList}
           />
         </Route>
         <Route path="/myNFT">

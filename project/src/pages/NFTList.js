@@ -4,7 +4,7 @@ import ITEM from '../components/Item'
 import { initialState } from '../assets/state';
 
 
-function NFTListContainer({ nfts, myNFTs, setNFTs, setMyNFTs }) {
+function NFTListContainer({ nfts, myNFTs, setNFTs, setMyNFTs, renewNFTList }) {
   const [join, setJoin] = useState(false);
   const [category, setCategory] = useState("Arts");
   const categories = ["Arts", "Collectibles", "Domain Names", "Music", "Photography", "Sports", "Trading Cards", "Utility", "Virtual Worlds"];
@@ -14,10 +14,11 @@ function NFTListContainer({ nfts, myNFTs, setNFTs, setMyNFTs }) {
     setNFTs(initialState[category.toLowerCase()]);
     setJoin(false);
   }
-  const handleJoin = (e, name) => {
+  const handleJoin = (e, name, id) => {
     const nft = name.replace(/ /g, "");
     setCategory(name);
-    setNFTs(initialState[nft]);
+    setNFTs([]);
+    renewNFTList(id);
     setJoin(true);
   }
   const handleBuy = (e, item) => {
@@ -46,8 +47,8 @@ function NFTListContainer({ nfts, myNFTs, setNFTs, setMyNFTs }) {
       <div id="item-list-body">
         <div id="item-list-title">{category}</div>
         {join === false
-          ? nfts.map((item, idx) => <NFT item={item} key={idx} join={join} handleJoin={handleJoin} />)
-          : nfts.map((item, idx) => <ITEM item={item} key={idx} join={join} handleBuy={handleBuy} />)}
+          ? nfts.map((item, idx) => <NFT item={item} key={idx} handleJoin={handleJoin} />)
+          : nfts.map((item, idx) => <ITEM item={item} key={idx} handleBuy={handleBuy} />)}
       </div>
     </div>
   );
