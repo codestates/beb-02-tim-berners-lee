@@ -1,14 +1,29 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Login from './Login';
+import { erc20Abi, erc20Addr } from '../erc20Contract';
+import { Modal } from '@mui/material';
 
-function Nav({ total, account, setAccount }) {
+function Nav({ total, web3, account, setAccount, token, setToken }) {
+  const [open, setOpen] = useState(false);
+
   const connectWallet = async () => {
-    console.log(account);
-    const accounts = await window.ethereum.request({
-      method: "eth_requestAccounts",
-    })
-    console.log(accounts[0])
-    setAccount(accounts[0]);
+    try {
+      const accounts = await web3.eth.getAccounts();
+      const contract = new web3.eth.Contract(erc20Abi, erc20Addr);
+      const name = await contract.methods.name().call();
+      const symbol = await contract.methods.symbol().call();
+      const balance = await contract.methods.balanceOf(accounts[0]).call();
+      setAccount(accounts[0]);
+      setToken({
+        name: name,
+        symbol: symbol,
+        balance: web3.utils.fromWei(balance, 'ether'),
+      });
+      setOpen(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -17,15 +32,18 @@ function Nav({ total, account, setAccount }) {
         <img id="logo" src="../logo.png" alt="logo" />
         <span id="name">CodeSea</span>
       </span>
-      <span id="login">
-        {account !== undefined && account !== ''
-          ? <span>Your Address : {account}</span>
-          : <button className="connect-button" onClick={() => connectWallet()}>
-            connect to MetaMask
-          </button>}
-      </span>
       <div id="menu">
-        <Link to="/token">Login</Link>
+        <Link onClick={connectWallet}>Login</Link>
+        <Modal open={open} onClose={() => setOpen(false)}>
+          <Login
+            web3={web3}
+            account={account}
+            setAccount={setAccount}
+            token={token}
+            setToken={setToken}
+            connectWallet={connectWallet}
+          />
+        </Modal>
         <Link to="/">Explore NFT</Link>
         <Link to="/myNFT">
           NFT 목록<span id="nav-item-counter">{total}</span>
