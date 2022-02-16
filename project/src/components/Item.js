@@ -7,7 +7,7 @@ export default function item({ item, join, handleBuy }) {
             <img className="item-img" src={item.img} alt={item.name}></img>
             <span className="nft-name">{item.name}</span>
             <span className="nft-artist">⧫ {item.price}</span>
-            <button className="join-button" onClick={(e) => handleBuy(e, item.id)}>Buy</button>
+            <button className="item-button" onClick={(e) => handleBuy(e, item)}>Buy</button>
         </div >
     )
 }

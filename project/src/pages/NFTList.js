@@ -20,30 +20,19 @@ function NFTListContainer({ nfts, myNFTs, setNFTs, setMyNFTs }) {
     setNFTs(initialState[nft]);
     setJoin(true);
   }
-  const handleBuy = (e, id) => {
-    const cartIdList = []
-    let tempCart = myNFTs.slice()
-
-    for (const el of myNFTs) {
-      cartIdList.push(el.itemId)
+  const handleBuy = (e, item) => {
+    const nextIdx = myNFTs[myNFTs.length - 1]["idx"] + 1;
+    const newNFT = {
+      "idx": nextIdx,
+      "category": item.category,
+      "nft": item.nft,
+      "name": item.name,
+      "img": item.img,
+      "itemId": item.id,
+      "price": item.price
     }
 
-    if (cartIdList.includes(id)) {
-      for (const el of tempCart) {
-        if (el.itemId === id) {
-          el.quantity++
-        }
-      }
-      setMyNFTs(tempCart)
-    } else {
-      const newItem = {
-        "itemId": id,
-        "quantity": 1
-      }
-      tempCart.push(newItem)
-      setMyNFTs(tempCart)
-    }
-
+    setMyNFTs([...myNFTs, newNFT]);
   }
   return (
     <div id="item-list-container">

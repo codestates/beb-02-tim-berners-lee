@@ -34,7 +34,7 @@ function App() {
         <Route exact={true} path="/">
           <NFTList nfts={nfts} myNFTs={myNFTs} setNFTs={setNFTs} setMyNFTs={setMyNFTs} />
         </Route>
-        <Route path="/yourNFT">
+        <Route path="/myNFT">
           <MyNFT myNFTs={myNFTs} setMyNFTs={setMyNFTs} nfts={nfts} />
         </Route>
       </Switch>
