@@ -10,6 +10,7 @@ import { fidenzaAbi, fidenzaAddr } from './fidenzaContract';
 import { sealenzaAbi, sealenzaAddr } from './sealenzaContract';
 
 function App() {
+  const [total, setTotal] = useState(0);
   const [web3, setWeb3] = useState();
   const [account, setAccount] = useState('');
   const [nfts, setNFTs] = useState(initialState.arts);
@@ -38,6 +39,8 @@ function App() {
       [fidenzaAbi, fidenzaAddr],
       [sealenzaAbi, sealenzaAddr],
     ];
+    setMyNFTs([]);
+    setTotal(0);
     for (const [abi, address] of contracts) {
       const contract = new web3.eth.Contract(abi, address);
       const name = await contract.methods.name().call();
@@ -108,6 +111,8 @@ function App() {
             setMyNFTs={setMyNFTs}
             nfts={nfts}
             account={account}
+            total={total}
+            setTotal={setTotal}
           />
         </Route>
       </Switch>

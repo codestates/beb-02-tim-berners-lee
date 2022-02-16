@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NFT from '../components/NFT';
 import ITEM from '../components/Item'
 import { initialState } from '../assets/state';
@@ -35,6 +35,7 @@ function NFTListContainer({ nfts, myNFTs, setNFTs, setMyNFTs, renewNFTList }) {
 
     setMyNFTs([...myNFTs, newNFT]);
   }
+
   return (
     <div id="item-list-container">
       <div id="nft-List">
