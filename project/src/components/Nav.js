@@ -4,7 +4,15 @@ import Login from './Login';
 import { erc20Abi, erc20Addr } from '../erc20Contract';
 import { Modal } from '@mui/material';
 
-function Nav({ total, web3, account, setAccount, token, setToken }) {
+function Nav({
+  total,
+  web3,
+  account,
+  setAccount,
+  token,
+  setToken,
+  renewMyNFTList,
+}) {
   const [open, setOpen] = useState(false);
 
   const connectWallet = async () => {
@@ -45,7 +53,7 @@ function Nav({ total, web3, account, setAccount, token, setToken }) {
           />
         </Modal>
         <Link to="/">Explore NFT</Link>
-        <Link to="/myNFT">
+        <Link to="/myNFT" onClick={renewMyNFTList}>
           NFT 목록<span id="nav-item-counter">{total}</span>
         </Link>
       </div>
