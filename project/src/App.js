@@ -10,6 +10,7 @@ import { fidenzaAbi, fidenzaAddr } from './fidenzaContract';
 import { sealenzaAbi, sealenzaAddr } from './sealenzaContract';
 
 function App() {
+  const [total, setTotal] = useState(0);
   const [web3, setWeb3] = useState();
   const [account, setAccount] = useState('');
   const [nfts, setNFTs] = useState(initialState.arts);
@@ -38,12 +39,13 @@ function App() {
       [fidenzaAbi, fidenzaAddr],
       [sealenzaAbi, sealenzaAddr],
     ];
+    setMyNFTs([]);
+    setTotal(0);
     for (const [abi, address] of contracts) {
       const contract = new web3.eth.Contract(abi, address);
       const name = await contract.methods.name().call();
       const totalSupply = await contract.methods.totalSupply().call();
 
-      setMyNFTs([]);
       for (let tokenId = 1; tokenId <= totalSupply; tokenId++) {
         const tokenOwner = await contract.methods.ownerOf(tokenId).call();
         if (tokenOwner === accounts[0]) {
@@ -57,6 +59,28 @@ function App() {
           });
         }
       }
+    }
+  };
+
+  const renewNFTList = async (id) => {
+    const contracts = [
+      [fidenzaAbi, fidenzaAddr],
+      [sealenzaAbi, sealenzaAddr],
+    ];
+    const [abi, address] = contracts[id - 1];
+    const contract = new web3.eth.Contract(abi, address);
+    const name = await contract.methods.name().call();
+    const totalSupply = await contract.methods.totalSupply().call();
+
+    for (let tokenId = 1; tokenId <= totalSupply; tokenId++) {
+      const tokenPrice = await contract.methods.tokenPrice(tokenId).call();
+      const tokenURI = await contract.methods.tokenURI(tokenId).call();
+      setNFTs((prev) => {
+        return [
+          ...prev,
+          { contract, name, tokenPrice, tokenId, tokenURI }
+        ];
+      });
     }
   };
 
@@ -78,6 +102,7 @@ function App() {
             myNFTs={myNFTs}
             setNFTs={setNFTs}
             setMyNFTs={setMyNFTs}
+            renewNFTList={renewNFTList}
           />
         </Route>
         <Route path="/myNFT">
@@ -86,6 +111,8 @@ function App() {
             setMyNFTs={setMyNFTs}
             nfts={nfts}
             account={account}
+            total={total}
+            setTotal={setTotal}
           />
         </Route>
       </Switch>

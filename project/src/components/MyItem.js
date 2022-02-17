@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function MyItem({
   item,
@@ -6,6 +6,7 @@ export default function MyItem({
   handleTransfer,
   quantity,
   account,
+  setTotal
 }) {
   const [recipient, setRecipient] = useState('');
 
@@ -19,6 +20,10 @@ export default function MyItem({
         setRecipient('');
       });
   };
+
+  useEffect(() => {
+    setTotal(prev => Number(prev) + Number(item.tokenPrice));
+  }, []);
 
   return (
     <li className="cart-item-body">
